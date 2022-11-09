@@ -5,15 +5,18 @@ import pandas as pd
 import streamlit as st
 
 """
-# NRF Demo
+# NRF Any-Time Demo Concept
 
 Adjust data freshness and get real-time capabilities when you need them without complex tech stack changes
 
 """
 
+FRESHNESS_FORMAT = "%f minutes"
 
 with st.echo(code_location='below'):
-    total_points = st.slider("Update frequency", 1, 5000, 2000)
+    total_points = st.slider("POS System - Data Freshness", 1, 5000, 2000, format=FRESHNESS_FORMAT)
+    total_points = st.slider("ERP (SAP HANA) - Data Freshness", 1, 5000, 2000, format=FRESHNESS_FORMAT)
+    total_points = st.slider("Oracle EDW - Data Freshness", 1, 5000, 2000, format=FRESHNESS_FORMAT)
     num_turns = st.slider("Cost tolerance", 1, 100, 9, format="$%.2f")
     btn = st.button("Continuous Mode")
 

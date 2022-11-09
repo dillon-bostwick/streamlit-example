@@ -14,9 +14,9 @@ Adjust data freshness and get real-time capabilities when you need them without 
 FRESHNESS_FORMAT = "%f minutes"
 
 with st.echo(code_location='below'):
-    total_points = st.slider("POS System - Data Freshness", 1, 5000, 2000, format=FRESHNESS_FORMAT)
-    total_points = st.slider("ERP (SAP HANA) - Data Freshness", 1, 5000, 2000, format=FRESHNESS_FORMAT)
-    total_points = st.slider("Oracle EDW - Data Freshness", 1, 5000, 2000, format=FRESHNESS_FORMAT)
+    total_points = st.slider("POS System - Data Freshness", 1, 5, 60*24, format=FRESHNESS_FORMAT)
+    total_points = st.slider("ERP (SAP HANA) - Data Freshness", 1, 120, 60*24, format=FRESHNESS_FORMAT)
+    total_points = st.slider("Oracle EDW - Data Freshness", 1, 24*60, 60*24, format=FRESHNESS_FORMAT)
     num_turns = st.slider("Cost tolerance", 1, 100, 9, format="$%.2f")
     btn = st.button("Continuous Mode")
 

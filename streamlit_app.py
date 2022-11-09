@@ -15,6 +15,7 @@ Adjust data freshness and get real-time capabilities when you need them without 
 with st.echo(code_location='below'):
     total_points = st.slider("Update frequency", 1, 5000, 2000)
     num_turns = st.slider("Cost tolerance", 1, 100, 9, format="$%.2f")
+    btn = st.button("Continuous Mode")
 
     Point = namedtuple('Point', 'x y')
     data = []
